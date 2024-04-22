@@ -1,1 +1,4 @@
-Portfolio Works!
+<app-preloader *ngIf="!NoLoader" [Loaded]="IsLoaded"></app-preloader>
+<!-- <app-preloader *ngIf="!IsLoaded" [Loaded]="IsLoaded"></app-preloader> -->
+<router-outlet *ngIf="IsLoaded"></router-outlet>
+<fa-icon [icon]="s"></fa-icon>
