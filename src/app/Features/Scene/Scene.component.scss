@@ -1,0 +1,19 @@
+section {
+	min-height: 300px;
+	&:nth-child(2n) {
+		background-color: var(--primary-color2);
+	}
+
+	&.hero {
+		min-height: 100vh;
+	}
+
+	&.about {
+	}
+
+	&.experience {
+	}
+
+	.contact {
+	}
+}

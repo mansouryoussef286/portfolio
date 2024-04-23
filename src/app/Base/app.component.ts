@@ -3,23 +3,24 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { PreLoaderComponent } from '../Common/Widgets/Spinners/PreLoader/PreLoader';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPlane, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { HeaderComponent } from '@App/Features/Header/Header';
+import { FooterComponent } from '@App/Features/Footer/Footer';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, CommonModule, PreLoaderComponent, FontAwesomeModule],
+	imports: [RouterOutlet, CommonModule, PreLoaderComponent, FontAwesomeModule, HeaderComponent, FooterComponent],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss'
 })
 export class AppComponent {
-	private readonly VAPID_PUBLIC_KEY: string =
-		'BHECh-IJilGwLFwpKQhlsHvqT939nhAcVtU4DW63QimcoT0qsdk_po8_QYgrUjercp8hvwiZHSeTwtx-4HT3J2g';
 	IsLoaded: boolean = false;
 	NoLoader: boolean = false;
 	ErrorToast!: number;
 
 	s = faPlane;
+	plus = faPlus;
 	constructor(
 		private Router: Router,
 	) { }
