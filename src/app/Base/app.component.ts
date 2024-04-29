@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, NavigationSkipped, Router, RouterOutlet } from '@angular/router';
 import { PreLoaderComponent } from '../Common/Widgets/Spinners/PreLoader/PreLoader';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -32,10 +32,6 @@ export class AppComponent implements OnInit {
 		this.ScrollUpSub();
 		this.FragmentScrollSub();
 		this.CheckIOS();
-
-	}
-
-	ngAfterViewInit(): void {
 
 	}
 
@@ -110,9 +106,11 @@ export class AppComponent implements OnInit {
 
 	FragmentScrollSub() {
 		this.scrollSubscription = this.Router.events.pipe(
-			filter(event => event instanceof NavigationEnd)
+			filter(event => event instanceof NavigationEnd || event instanceof NavigationSkipped)
 		).subscribe((event: any) => {
-			this.handleFragmentScroll(event.urlAfterRedirects);
+			// console.log(event);
+			// to scroll even if the route was already scrolled to
+			this.handleFragmentScroll(event.urlAfterRedirects || event.url);
 		});
 	}
 
