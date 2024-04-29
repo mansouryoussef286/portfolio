@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { PreLoaderComponent } from '../Common/Widgets/Spinners/PreLoader/PreLoader';
 import { CommonModule } from '@angular/common';
@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlane, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HeaderComponent } from '@App/Features/Header/Header';
 import { FooterComponent } from '@App/Features/Footer/Footer';
+import { Subscription, filter } from 'rxjs';
 
 @Component({
 	selector: 'app-root',
@@ -14,7 +15,7 @@ import { FooterComponent } from '@App/Features/Footer/Footer';
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 	IsLoaded: boolean = false;
 	NoLoader: boolean = false;
 	ErrorToast!: number;
@@ -25,24 +26,47 @@ export class AppComponent {
 		private Router: Router,
 	) { }
 
+
 	ngOnInit() {
 		this.PreLoaderListener();
 		this.ScrollUpSub();
+		this.FragmentScrollSub();
 		this.CheckIOS();
+
 	}
 
+	ngAfterViewInit(): void {
+
+	}
 
 	PreLoaderListener() {
 		const startTime = new Date().getTime();
 		// console.log('startTime: ', startTime);
 
-		// for mobile and very slow connections
-		setTimeout(() => {
+		const onLoadingFinish = () => {
+			if (this.IsLoaded) return; // already loaded
+
 			this.IsLoaded = true;
+			const url = this.Router.url;
+			console.log('handle scroll');
+
 			setTimeout(() => {
+				// waiting for the page to render
+				this.handleFragmentScroll(url);
+			}, 100);
+
+			setTimeout(() => {
+				// waiting for fading css animation 
 				this.NoLoader = true;
 			}, 500);
+		}
+
+
+		// for mobile and very slow connections
+		setTimeout(() => {
+			onLoadingFinish();
 		}, 5000);
+
 		// Add an event listener to execute code when the window is loaded
 		window.addEventListener('load', () => {
 			const currentTime = new Date().getTime();
@@ -52,17 +76,11 @@ export class AppComponent {
 			const minLoadingTime = 1500;
 			if (elapsedTime >= minLoadingTime) {
 				// console.log('first');
-				this.IsLoaded = true;
-				setTimeout(() => {
-					this.NoLoader = true;
-				}, 500);
+				onLoadingFinish();
 			} else {
 				setTimeout(() => {
 					// console.log('scond');
-					this.IsLoaded = true;
-					setTimeout(() => {
-						this.NoLoader = true;
-					}, 500);
+					onLoadingFinish();
 				}, minLoadingTime - elapsedTime);
 			}
 		});
@@ -88,5 +106,49 @@ export class AppComponent {
 			document.body.classList.add('ios-device');
 		}
 	}
-}
 
+
+	FragmentScrollSub() {
+		this.scrollSubscription = this.Router.events.pipe(
+			filter(event => event instanceof NavigationEnd)
+		).subscribe((event: any) => {
+			this.handleFragmentScroll(event.urlAfterRedirects);
+		});
+	}
+
+	private fragment: string | undefined;
+	private scrollSubscription: Subscription | undefined;
+
+	private handleFragmentScroll(url: string) {
+		this.fragment = this.getFragmentFromUrl(url);
+		this.scrollToAnchor();
+	}
+
+	private getFragmentFromUrl(url: string): string | undefined {
+		const fragmentIndex = url.indexOf('#');
+		return fragmentIndex !== -1 ? url.substring(fragmentIndex + 1) : undefined;
+	}
+
+	private scrollToAnchor() {
+		if (this.fragment) {
+			const element = document.getElementById(this.fragment);
+			if (element) {
+				// element.scrollIntoView({ behavior: 'smooth', block: 'start',  });
+
+				window.scrollTo({
+					behavior: 'smooth',
+					top:
+						element.getBoundingClientRect().top -
+						document.body.getBoundingClientRect().top -
+						56,
+				})
+			}
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.scrollSubscription) {
+			this.scrollSubscription.unsubscribe();
+		}
+	}
+}
