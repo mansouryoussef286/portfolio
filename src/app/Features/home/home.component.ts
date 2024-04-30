@@ -2,9 +2,13 @@ import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 // import { NgtCanvas } from 'angular-three';
 import { SceneComponent } from '../Scene/Scene.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faFacebook, faGoogle, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGithub, faGoogle, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FooterComponent } from '../Footer/Footer';
 import { CommonModule } from '@angular/common';
+import { RoutePaths } from '@App/Common/Settings/RoutePaths';
+import { RouterModule } from '@angular/router';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faChevronDown, faMapPin } from '@fortawesome/free-solid-svg-icons';
 
 export class Service {
 	Title!: string;
@@ -21,6 +25,7 @@ export class Project {
 export class Experience {
 	Title!: string;
 	Company!: string;
+	Logo!: string;
 	Role!: string;
 	Description!: string;
 	From!: string;
@@ -38,17 +43,23 @@ export class Tech {
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [CommonModule, SceneComponent, FontAwesomeModule, FooterComponent],
+	imports: [CommonModule, SceneComponent, FontAwesomeModule, FooterComponent, RouterModule],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss',
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent implements AfterViewInit {
 	readonly SceneGraph = SceneComponent;
+	RoutePaths = RoutePaths;
+
 	instagram = faInstagram;
 	facebook = faFacebook;
 	linkedin = faLinkedin;
-	gmail = faGoogle;
+	gmail = faEnvelope;
+	github = faGithub;
+
+	chevron = faChevronDown;
+	pin = faMapPin;
 
 	services: Service[] = [
 		{
@@ -80,11 +91,12 @@ export class HomeComponent implements AfterViewInit {
 		{
 			Title: 'one',
 			Company: 'Ultatel',
+			Logo: 'assets/Images/ultatel.png',
 			Role: 'Full stack software engineer',
 			Description: 'Telecommunication company specialized in VOIP services',
-			From: '',
-			To: '',
-			Country: '',
+			From: '08/2022',
+			To: '03/2024',
+			Country: 'Egypt',
 			Duties: [
 				`Contributed to the development of new projects to expand the company's offerings and increase its competitiveness in the market.`,
 				`Enhanced and implemented new features into existing projects to improve functionality and user experience.`,
@@ -102,11 +114,12 @@ export class HomeComponent implements AfterViewInit {
 		{
 			Title: 'two',
 			Company: 'TPS',
-			Role: 'software engineer',
+			Logo: 'assets/Images/tps.jpg',
+			Role: 'Software engineer',
 			Description: 'Software house company subsidiary of AZM KSA specialized in fintech solutions.',
-			From: '',
-			To: '',
-			Country: '',
+			From: '03/2024',
+			To: 'Present',
+			Country: 'KSA',
 			Duties: [
 				`Troubleshooted and resolved support issues to ensure optimal system running performance.`,
 			],
@@ -123,70 +136,71 @@ export class HomeComponent implements AfterViewInit {
 
 	techs: Tech[] = [
 		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/.net.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/.netcore.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
+			Title: '',
 			ImgSrc: 'assets/Images/Techs/angular.png',
-			ImgAlt: '',
+			ImgAlt: 'angular',
 		},
 		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/css.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/git.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/html.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/js.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/mariadb.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/mongodb.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/nestjs.png',
-			ImgAlt: '',
-		},
-		{
-			Title: 'VSC',
+			Title: '',
 			ImgSrc: 'assets/Images/Techs/ts.png',
-			ImgAlt: '',
+			ImgAlt: 'typescript',
 		},
 		{
-			Title: 'VSC',
-			ImgSrc: 'assets/Images/Techs/vs.png',
-			ImgAlt: '',
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/js.png',
+			ImgAlt: 'javascript',
 		},
 		{
-			Title: 'VSC',
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/html.png',
+			ImgAlt: 'html',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/css.png',
+			ImgAlt: 'css',
+		},
+		{
+			Title: '',
 			ImgSrc: 'assets/Images/Techs/vsc.png',
-			ImgAlt: '',
+			ImgAlt: 'visual studio code text editor',
 		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/.net.png',
+			ImgAlt: '.net framework',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/.netcore.png',
+			ImgAlt: '.net core framework',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/nestjs.png',
+			ImgAlt: 'nestjs',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/vs.png',
+			ImgAlt: 'visual studio text editor',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/mariadb.png',
+			ImgAlt: 'mariadb',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/mongodb.png',
+			ImgAlt: 'mongodb',
+		},
+		{
+			Title: '',
+			ImgSrc: 'assets/Images/Techs/git.png',
+			ImgAlt: 'git version control',
+		},
+
 	];
 
 	ngAfterViewInit() {

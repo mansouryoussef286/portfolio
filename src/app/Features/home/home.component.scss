@@ -43,16 +43,11 @@ $social-width: 64px;
 section {
 	min-height: 300px;
 	position: relative;
+	background-color: var(--primary-bg-color);
 
-	&:nth-child(2n) {
-		background-color: var(--primary-color2);
-	}
-	&:nth-child(2n + 1) {
-		background-color: var(--primary-color3);
-	}
-	&:nth-child(1) {
-		// background-color: white;
-	}
+	// &:nth-child(2n) {
+	// 	background-color: var(--primary-color2);
+	// }
 
 	.bg-title {
 		position: absolute;
@@ -93,17 +88,29 @@ section {
 		}
 	}
 
+	.main {
+		padding: 0 5%;
+
+		.section-title {
+			color: var(--primary-color1);
+			padding-bottom: 20px;
+		}
+	}
+
 	&.hero {
 		min-height: 100vh;
 		padding-top: var(--header-height);
 
-		background-color: #000000;
 		background-image: radial-gradient(
 				ellipse at 47% 33%,
-				#17b585b3 0,
-				transparent 34%
+				var(--primary-color2) 0,
+				transparent 300px
 			),
-			radial-gradient(at 82% 65%, #b23c3c9e 0, transparent 45%);
+			radial-gradient(
+				circle at 75% 60%,
+				var(--primary-color1) -30%,
+				transparent 300px
+			);
 
 		.main {
 			width: 100%;
@@ -150,29 +157,6 @@ section {
 						padding: 0;
 					}
 				}
-
-				.services {
-					display: flex;
-					justify-content: space-between;
-					align-items: stretch;
-					gap: 10px;
-					.service {
-						font-size: 14px;
-						display: flex;
-						flex-direction: column;
-						justify-content: flex-start;
-						align-items: flex-start;
-						padding: 10px;
-						max-width: 220px;
-
-						// glassmorphism
-						background: rgba(255, 255, 255, 0.2);
-						border-radius: 16px;
-						box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-						backdrop-filter: blur(5px);
-						-webkit-backdrop-filter: blur(5px);
-					}
-				}
 			}
 
 			.right {
@@ -217,21 +201,21 @@ section {
 
 		.socials {
 			position: absolute;
-			left: 0;
+			right: 0;
 			bottom: 0;
 			width: $social-width;
 
 			opacity: 0;
-			transform: translateX(-50px);
+			// transform: translateX(50px);
 			transition: $transition;
 			&.transition {
 				opacity: 1;
-				transform: translateX(0px);
+				// transform: translateX(0px);
 			}
 
 			ul {
 				// background-color: rgba(114, 114, 114, 0.532);
-				background: linear-gradient(0deg, #c6c6c68f, transparent);
+				background: linear-gradient(0deg, #c6c6c61e, transparent);
 				padding: 1rem;
 				margin: 0;
 				list-style: none;
@@ -251,12 +235,74 @@ section {
 
 	&.about {
 		// background-color: transparent;
-		.text {
-			width: 50%;
-			margin: auto;
+		background-image: radial-gradient(
+				ellipse at 30% 29%,
+				var(--primary-color2) 0,
+				transparent 34%
+			),
+			radial-gradient(
+				at -15% 54%,
+				var(--primary-color1) -30%,
+				transparent 30%
+			),
+			radial-gradient(
+				at 70% 40%,
+				var(--primary-color1) -20%,
+				transparent 25%
+			);
 
-			z-index: 2;
-			position: relative;
+		.main {
+			// width: 50%;
+			// margin: auto;
+			// z-index: 2;
+			// position: relative;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.objective {
+				max-width: 600px;
+				margin: auto;
+			}
+
+			.services {
+				display: flex;
+				justify-content: space-around;
+				align-items: stretch;
+				gap: 10px;
+
+				.service {
+					font-size: 16px;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+					padding: 10px;
+					max-width: 270px;
+
+					// glassmorphism
+					background: rgba(0, 0, 0, 0.2);
+					border-radius: 16px;
+					box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+					backdrop-filter: blur(5px);
+					-webkit-backdrop-filter: blur(5px);
+
+					.title {
+						color: var(--primary-color1);
+						font-weight: bold;
+					}
+
+					ul {
+						margin: 0;
+						padding: 0 0 0 15px;
+
+						li::marker {
+							color: var(--primary-color1);
+						}
+					}
+				}
+			}
 
 			.techs {
 				display: flex;
@@ -266,11 +312,10 @@ section {
 				// flex-direction: column;
 				// align-items: stretch;
 				// text-align: center;
-				padding-bottom: 50px;
 
 				.tech {
 					img {
-						mix-blend-mode: multiply;
+						// mix-blend-mode: multiply;
 						// border-radius: 50%;
 
 						$partner-logo: 150px;
@@ -302,21 +347,26 @@ section {
 		// height: 800px;
 
 		// background-image: url('https://static.crozdesk.com/web_app_library/providers/logos/000/013/313/original/ultatel-1669216173-logo.png?1669216173');
-
 		// background-attachment: fixed;
 		// background-position: center;
 		// background-repeat: no-repeat;
 		// background-size: cover;
 
 		.main {
-			width: 80%;
-			margin: auto;
+			// width: 80%;
+			// margin: auto;
 
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 50px;
 			.accordion {
 				color: var(--primary-font-color) !important;
+				width: 100%;
+
 				.accordion-item {
 					background-color: transparent;
-					padding: 10px;
+					padding: 30px 10px;
 					margin-inline-start: 10px;
 					padding-top: 0;
 					position: relative;
@@ -340,28 +390,55 @@ section {
 							padding: 0 20px;
 							box-shadow: none !important;
 							color: var(--primary-font-color);
-
+							justify-content: space-between;
 							// begin arrow
 							&::after {
+								background-image: none;
+							}
+
+							.accordion-icon {
+								transition: 0.2s ease-in-out;
 								transform: rotate(-90deg);
 								margin: 0;
+
 								position: absolute;
 								top: -6px;
 								left: -40px;
 
-								width: 25px;
-								height: 25px;
-								background-size: contain;
+								font-size: 24px;
 							}
-							&:not(.collapsed)::after {
-								transform: rotate(0deg);
+							&:not(.collapsed) {
+								.accordion-icon {
+									transform: rotate(0deg);
+								}
 							}
 							// end arrow
+
+							.info {
+								display: flex;
+								flex-direction: column;
+								align-items: flex-start;
+								width: 100%;
+
+								.country {
+									color: var(--secondary-font-color);
+									.from-to {
+										margin-inline-start: 10px;
+									}
+								}
+								.role {
+									font-weight: bold;
+								}
+							}
+							img {
+								object-fit: contain;
+								height: 100px;
+								border-radius: 10px;
+							}
 						}
 					}
 
 					.accordion-collapse {
-						margin: auto;
 						color: var(--primary-font-color);
 					}
 				}

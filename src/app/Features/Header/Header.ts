@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 	wasSmallScreen: boolean = window.innerWidth <= 576;
 	@ViewChild('NavbarCollapse') NavbarCollapse!: ElementRef;
 	@ViewChild('navbar') navbar: any;
-	RoutePaths = RoutePaths
+	RoutePaths = RoutePaths;
 
 
 	constructor(private Router: Router) { }
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
 
 	toggleNavbarScrolled(ishovered: boolean) {
 		const navbar = document.querySelector('.navbar');
-		if (window.scrollY > 1) {
+		if (window.scrollY > 100) {
 			navbar?.classList.add('navbar-scrolled');
 		} else {
 			if (ishovered) {

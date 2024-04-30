@@ -6,18 +6,12 @@
 				<div class="starter">Hello, My name is</div>
 				<div class="name">Youssef Mansour</div>
 				<div class="job-title">A Full stack software engineer</div>
-				<div class="location">Based in Egypt</div>
+				<!-- <div class="location">Based in Egypt</div> -->
 			</div>
 
-			<div class="services">
-				<div *ngFor="let service of services" class="service">
-					<div class="title">{{ service.Title }}</div>
-					<ul>
-						<li *ngFor="let subService of service.SubServices">
-							{{ subService }}
-						</li>
-					</ul>
-				</div>
+			<div class="cta">
+				<a class="btn btn-secondary" [routerLink]="['/' + RoutePaths.Home]" fragment="about" routerLink> Learn more </a>
+				<a class="btn btn-primary" [routerLink]="['/' + RoutePaths.Home]" fragment="experience" routerLink> Preview my experience </a>
 			</div>
 		</div>
 
@@ -43,6 +37,9 @@
 			<li>
 				<a href=""><fa-icon [icon]="gmail"></fa-icon></a>
 			</li>
+			<li>
+				<a href=""><fa-icon [icon]="github"></fa-icon></a>
+			</li>
 		</ul>
 	</div>
 </section>
@@ -53,20 +50,39 @@
 			alt="" />
 	</div> -->
 <section class="about" id="about">
-	<div class="bg-title l">
+	<!-- <div class="bg-title l">
 		<h1>about</h1>
-	</div>
+	</div> -->
 
-	<div class="text">
-		<div class="objective">
-			As a full-stack developer with proficiency in Angular and TypeScript, Nodejs backend frameworks as NestJS and .NET framework. I am seeking a
-			challenging role that will allow me to utilize my skills to develop and maintain complex systems. With experience in both front-end and back-end
-			development, as well as a background in civil site engineering, I bring a unique perspective and problem-solving skills that enable me to contribute
-			to the success of any project. I am committed to continuous learning and professional development to stay up-to-date with the latest technologies
-			and industry trends.
+	<div class="main">
+		<h1 class="section-title">About me</h1>
+		Education
+		<div class="objective mb-5">
+			<p>
+				As a full-stack developer with proficiency in Angular and TypeScript, Nodejs backend frameworks as NestJS and .NET framework. I am seeking a
+				challenging role that will allow me to utilize my skills to develop and maintain complex systems.
+			</p>
+			<p>
+				With experience in both front-end and back-end development, as well as a background in civil site engineering, I bring a unique perspective and
+				problem-solving skills that enable me to contribute to the success of any project.
+			</p>
+			<p>I am committed to continuous learning and professional development to stay up-to-date with the latest technologies and industry trends.</p>
 		</div>
 
-		<div class="techs">
+		<h3>Providing</h3>
+		<div class="services mb-5">
+			<div *ngFor="let service of services" class="service">
+				<div class="title">{{ service.Title }}</div>
+				<ul>
+					<li *ngFor="let subService of service.SubServices">
+						{{ subService }}
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<h3>Using</h3>
+		<div class="techs mb-5">
 			<span *ngFor="let tech of techs" class="tech">
 				<img [src]="tech.ImgSrc" [alt]="tech.ImgAlt" class="img" />
 			</span>
@@ -74,12 +90,14 @@
 	</div>
 </section>
 
-<section class="experience">
-	<div class="bg-title r">
+<section class="experience" id="experience">
+	<!-- <div class="bg-title r">
 		<h1>experience</h1>
-	</div>
+	</div> -->
 
 	<div class="main">
+		<h1 class="section-title">Professional experience</h1>
+
 		<div class="accordion accordion-flush">
 			<div class="accordion-item" *ngFor="let experience of experiences; index as i">
 				<h2 class="accordion-header">
@@ -89,11 +107,25 @@
 						data-bs-toggle="collapse"
 						[attr.data-bs-target]="'#experience-' + i"
 						aria-expanded="false">
-						{{ experience.Title }}
-						<br />
-						{{ experience.Company }} / {{ experience.Role }}
-						<br />
-						{{ experience.Description }}
+						<fa-icon [icon]="chevron" class="accordion-icon"></fa-icon>
+
+						<div class="info">
+							<div class="country">
+								<fa-icon [icon]="pin"></fa-icon>
+								{{ experience.Country }}
+								<span class="from-to">{{ experience.From }} - {{ experience.To }}</span>
+							</div>
+							<h3>
+								{{ experience.Company }}
+							</h3>
+							<div class="role">
+								{{ experience.Role }}
+							</div>
+							<div>
+								{{ experience.Description }}
+							</div>
+						</div>
+						<img [src]="experience.Logo" alt="" />
 					</button>
 				</h2>
 				<div [id]="'experience-' + i" class="accordion-collapse collapse">
@@ -118,10 +150,12 @@
 				</div>
 			</div>
 		</div>
+
+		Projects layout
 	</div>
 </section>
-<section class="resume"></section>
-<section class="contact"></section>
+<!-- <section class="resume"></section> -->
+<!-- <section class="contact"></section> -->
 <!-- <ngt-canvas [sceneGraph]="SceneGraph" /> -->
 <!-- <app-footer></app-footer> -->
 <!-- </div> -->
