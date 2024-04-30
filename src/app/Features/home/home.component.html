@@ -26,19 +26,19 @@
 	<div class="socials">
 		<ul>
 			<li>
-				<a href=""><fa-icon [icon]="linkedin"></fa-icon></a>
+				<a href=""><fa-icon [icon]="Icons.linkedin"></fa-icon></a>
 			</li>
 			<li>
-				<a href=""><fa-icon [icon]="instagram"></fa-icon></a>
+				<a href=""><fa-icon [icon]="Icons.instagram"></fa-icon></a>
 			</li>
 			<li>
-				<a href=""><fa-icon [icon]="facebook"></fa-icon></a>
+				<a href=""><fa-icon [icon]="Icons.facebook"></fa-icon></a>
 			</li>
 			<li>
-				<a href=""><fa-icon [icon]="gmail"></fa-icon></a>
+				<a href=""><fa-icon [icon]="Icons.gmail"></fa-icon></a>
 			</li>
 			<li>
-				<a href=""><fa-icon [icon]="github"></fa-icon></a>
+				<a href=""><fa-icon [icon]="Icons.github"></fa-icon></a>
 			</li>
 		</ul>
 	</div>
@@ -107,11 +107,11 @@
 						data-bs-toggle="collapse"
 						[attr.data-bs-target]="'#experience-' + i"
 						aria-expanded="false">
-						<fa-icon [icon]="chevron" class="accordion-icon"></fa-icon>
+						<fa-icon [icon]="Icons.chevron" class="accordion-icon"></fa-icon>
 
 						<div class="info">
 							<div class="country">
-								<fa-icon [icon]="pin"></fa-icon>
+								<fa-icon [icon]="Icons.pin"></fa-icon>
 								{{ experience.Country }}
 								<span class="from-to">{{ experience.From }} - {{ experience.To }}</span>
 							</div>
