@@ -1,5 +1,7 @@
 :root {
 	--primary-bg-color: black;
+	--secondary-bg-color: white;
+
 	--primary-color1: #3b76b5;
 	// --primary-color1: purple;
 	--primary-color2: #4e9bee;
@@ -7,10 +9,11 @@
 	--primary-color3: black;
 
 	--primary-font-color: rgb(255, 255, 255);
+	--invert-primary-font-color: black;
 	--secondary-font-color: #cccccc;
+	--invert-secondary-font-color: #6e6e6e;
 	--header-height: 56px;
 	--box-shadow-color: rgba(0, 0, 0, 0.4);
-	--input-bg-color: #fff;
 
 	.dark-mode {
 		--primary-bg-color: #fff;

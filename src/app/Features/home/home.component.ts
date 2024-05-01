@@ -14,12 +14,20 @@ import { Tech, Techs } from './Data/Tech';
 import { Service, Services } from './Data/Service';
 import { AnimationService } from '@App/Common/Services/Animation.Service';
 import { Project, Projects } from './Data/Projects';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [CommonModule, SceneComponent, FontAwesomeModule, FooterComponent, RouterModule],
+	imports: [
+		CommonModule,
+		SceneComponent,
+		FontAwesomeModule,
+		FooterComponent,
+		RouterModule,
+		ProjectCardComponent
+	],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss',
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -36,7 +44,7 @@ export class HomeComponent implements AfterViewInit {
 		github: faGithub,
 		chevron: faChevronDown,
 		pin: faMapPin,
-	}
+	};
 
 	services: Service[] = Services;
 	experiences: Experience[] = Experiences;

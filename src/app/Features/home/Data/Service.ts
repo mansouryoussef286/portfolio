@@ -22,9 +22,16 @@ export const Services: Service[] = [
     {
         Title: 'Full-Stack Development',
         SubServices: [
-            'Full project lifecycle management',
+            'Managing project lifecycle',
             'Integration of frontend and backend',
-            'Deployment and hosting'
+            // 'Deployment and hosting'
+        ]
+    },
+    {
+        Title: 'Infrastructure',
+        SubServices: [
+            'Deployment and hosting',
+            'Domain management'
         ]
     },
 ];

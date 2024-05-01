@@ -21,7 +21,8 @@ export const Experiences: Experience[] = [
     {
         Title: 'one',
         Company: 'Ultatel',
-        Logo: 'assets/Images/ultatel.png',
+        Logo: 'assets/Images/ultatel.webp',
+        // Logo: 'assets/Images/ultatel.png',
         Role: 'Full stack software engineer',
         Description: 'Telecommunication company specialized in VOIP services',
         From: '08/2022',

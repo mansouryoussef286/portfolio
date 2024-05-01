@@ -2,6 +2,7 @@ $main-color: var(--primary-color1);
 $bg-title-color: white;
 $transition: all 1s ease-in;
 $social-width: 64px;
+$main-gap: 100px;
 
 .page {
 	height: 100vh;
@@ -118,7 +119,7 @@ section {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			gap: 100px;
+			gap: $main-gap;
 			padding-inline-start: calc($social-width + 10px);
 
 			opacity: 0;
@@ -229,6 +230,27 @@ section {
 						color: $main-color;
 					}
 				}
+			}
+		}
+	}
+
+	&.problem-solution {
+		.main {
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			gap: $main-gap;
+
+			.p-s {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.problem {
+			}
+
+			.solution {
 			}
 		}
 	}
@@ -442,6 +464,12 @@ section {
 						color: var(--primary-font-color);
 					}
 				}
+			}
+
+			.projects-card {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 	}
