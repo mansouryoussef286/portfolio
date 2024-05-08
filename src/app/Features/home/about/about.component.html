@@ -1,0 +1,55 @@
+<div class="main">
+	<div class="objective mb-5">
+		<div class="left">
+			<h1 class="section-title">About me</h1>
+			<p>
+				As a full-stack developer with proficiency in Angular and TypeScript, Nodejs backend frameworks as NestJS and .NET framework. I am seeking a
+				challenging role that will allow me to utilize my skills to develop and maintain complex systems.
+			</p>
+			<p>
+				With experience in both front-end and back-end development, as well as a background in civil site engineering, I bring a unique perspective and
+				problem-solving skills that enable me to contribute to the success of any project.
+			</p>
+			<p>I am committed to continuous learning and professional development to stay up-to-date with the latest technologies and industry trends.</p>
+		</div>
+		<div class="right">
+			<div class="numbers">
+				<div class="number-item"><span class="number"> 3+</span>Years of experience</div>
+				<div class="number-item"><span class="number">12+</span>Projects</div>
+			</div>
+			<div class="education">
+				<h4 class="title">Studied</h4>
+				<div *ngFor="let education of educations" class="degree-item">
+					<div class="degree-info">
+						<a [href]="education.Link"><img [src]="education.ImgSrc" alt="" /></a>
+						<div>
+							<div class="degree">{{ education.Degree }}</div>
+							<div class="degree-institution">{{ education.Institution }}</div>
+							<div class="degree-desc" [innerHTML]="education.Description"></div>
+						</div>
+					</div>
+					<div class="from-to">{{ education.From }} - {{ education.To }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="title">Services Provided</h3>
+	<div class="services mb-5">
+		<div *ngFor="let service of services" class="service">
+			<div class="title">{{ service.Title }}</div>
+			<ul>
+				<li *ngFor="let subService of service.SubServices">
+					{{ subService }}
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<h3 class="title">Techs Used</h3>
+	<div class="techs mb-5">
+		<button *ngFor="let tech of techs" class="tech" [title]="tech.ImgAlt">
+			<img [src]="tech.ImgSrc" [alt]="tech.ImgAlt" class="img" />
+		</button>
+	</div>
+</div>

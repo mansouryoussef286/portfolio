@@ -1,47 +1,6 @@
 <!-- <div class="page"> -->
 <section class="hero">
-	<div class="main">
-		<div class="left">
-			<div class="info">
-				<div class="starter">Hello, My name is</div>
-				<div class="name">Youssef Mansour</div>
-				<div class="job-title">A Full stack software engineer</div>
-				<!-- <div class="location">Based in Egypt</div> -->
-			</div>
-
-			<div class="cta">
-				<a class="btn btn-secondary" [routerLink]="['/' + RoutePaths.Home]" fragment="about" routerLink> Learn more </a>
-				<a class="btn btn-primary" [routerLink]="['/' + RoutePaths.Home]" fragment="experience" routerLink> Preview my experience </a>
-			</div>
-		</div>
-
-		<div class="right">
-			<div class="image">
-				<!-- <img src="assets/Images/portrait.jfif" alt="" /> -->
-				<img src="assets/Images/portrait-nobg.png" alt="" />
-			</div>
-		</div>
-	</div>
-
-	<div class="socials">
-		<ul>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.linkedin"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.instagram"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.facebook"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.gmail"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.github"></fa-icon></a>
-			</li>
-		</ul>
-	</div>
+	<app-hero></app-hero>
 </section>
 
 <!-- <div class="parallax">
@@ -54,44 +13,7 @@
 </section>
 
 <section class="about" id="about">
-	<!-- <div class="bg-title l">
-		<h1>about</h1>
-	</div> -->
-
-	<div class="main">
-		<h1 class="section-title">About me</h1>
-		Education
-		<div class="objective mb-5">
-			<p>
-				As a full-stack developer with proficiency in Angular and TypeScript, Nodejs backend frameworks as NestJS and .NET framework. I am seeking a
-				challenging role that will allow me to utilize my skills to develop and maintain complex systems.
-			</p>
-			<p>
-				With experience in both front-end and back-end development, as well as a background in civil site engineering, I bring a unique perspective and
-				problem-solving skills that enable me to contribute to the success of any project.
-			</p>
-			<p>I am committed to continuous learning and professional development to stay up-to-date with the latest technologies and industry trends.</p>
-		</div>
-
-		<h3>Providing</h3>
-		<div class="services mb-5">
-			<div *ngFor="let service of services" class="service">
-				<div class="title">{{ service.Title }}</div>
-				<ul>
-					<li *ngFor="let subService of service.SubServices">
-						{{ subService }}
-					</li>
-				</ul>
-			</div>
-		</div>
-
-		<h3>Using</h3>
-		<div class="techs mb-5">
-			<span *ngFor="let tech of techs" class="tech">
-				<img [src]="tech.ImgSrc" [alt]="tech.ImgAlt" class="img" />
-			</span>
-		</div>
-	</div>
+	<app-about></app-about>
 </section>
 
 <section class="experience" id="experience">
@@ -102,7 +24,7 @@
 	<div class="main">
 		<h1 class="section-title">Professional experience</h1>
 		Projects layout
-		<div class="projects-card">
+		<div class="projects-card mb-5">
 			<app-project-card *ngFor="let project of projects" [Project]="project"></app-project-card>
 		</div>
 
@@ -160,6 +82,7 @@
 		</div>
 	</div>
 </section>
+
 <!-- <section class="resume"></section> -->
 <!-- <section class="contact"></section> -->
 <!-- <ngt-canvas [sceneGraph]="SceneGraph" /> -->

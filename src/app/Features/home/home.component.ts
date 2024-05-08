@@ -9,13 +9,13 @@ import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { RouterModule } from '@angular/router';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faChevronDown, faMapPin } from '@fortawesome/free-solid-svg-icons';
-import { Experience, Experiences } from './Data/Experience';
-import { Tech, Techs } from './Data/Tech';
-import { Service, Services } from './Data/Service';
 import { AnimationService } from '@App/Common/Services/Animation.Service';
-import { Project, Projects } from './Data/Projects';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProblemSolutionComponent } from './problem-solution/problem-solution.component';
+import { AboutComponent } from './about/about.component';
+import { HeroComponent } from './hero/hero.component';
+import { Experience, Experiences } from './Data/Experience';
+import { Project, Projects } from './Data/Projects';
 
 
 @Component({
@@ -28,7 +28,9 @@ import { ProblemSolutionComponent } from './problem-solution/problem-solution.co
 		FooterComponent,
 		RouterModule,
 		ProjectCardComponent,
-		ProblemSolutionComponent
+		ProblemSolutionComponent,
+		AboutComponent,
+		HeroComponent
 	],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss',
@@ -39,18 +41,16 @@ export class HomeComponent implements AfterViewInit {
 	RoutePaths = RoutePaths;
 
 	Icons = {
-		instagram: faInstagram,
-		facebook: faFacebook,
-		linkedin: faLinkedin,
-		gmail: faEnvelope,
-		github: faGithub,
+		// instagram: faInstagram,
+		// facebook: faFacebook,
+		// linkedin: faLinkedin,
+		// gmail: faEnvelope,
+		// github: faGithub,
 		chevron: faChevronDown,
 		pin: faMapPin,
 	};
 
-	services: Service[] = Services;
 	experiences: Experience[] = Experiences;
-	techs: Tech[] = Techs;
 	projects: Project[] = Projects;
 
 	constructor(private AnimationService: AnimationService) { }

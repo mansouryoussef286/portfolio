@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
 	ScrollChanges() {
 		window.addEventListener('scroll', () => {
 			this.toggleNavbarScrolled(false);
-			this.toggleBackgroundScrolled();
+			// this.toggleBackgroundScrolled();
 		});
 	}
 
