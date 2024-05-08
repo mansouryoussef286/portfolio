@@ -1,0 +1,165 @@
+$main-gap: 100px;
+.main {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: $main-gap;
+
+	.p-s {
+		display: flex;
+		// align-items: center;
+
+		@media (max-width: 576px) {
+			flex-direction: column;
+		}
+	}
+
+	.problem {
+		justify-content: center;
+		align-items: stretch;
+		gap: $main-gap;
+
+		.right,
+		.left {
+			width: 50%;
+		}
+
+		@media (max-width: 576px) {
+			gap: 0;
+
+			.left,
+			.right {
+				width: 100%;
+			}
+
+			.right {
+				height: 200px;
+			}
+		}
+	}
+
+	.solution {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.right {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			gap: 10px;
+			// height: 350px;
+			@media (max-width: 576px) {
+				flex-direction: column;
+				align-items: center;
+			}
+			.benefit {
+				width: 100%;
+				// max-width: 300px;
+				width: 150px;
+				height: 200px;
+				background-color: #292929;
+				border-radius: 10px;
+				box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+				border: 2px solid rgba(7, 7, 7, 0.12);
+				font-size: 16px;
+				transition: all 0.3s ease;
+
+				position: relative;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				flex-direction: column;
+				cursor: pointer;
+				overflow: hidden;
+
+				.icon {
+					margin: 10px auto 0;
+					width: 80px;
+					height: 80px;
+					max-height: 80px;
+					max-width: 80px;
+					background: linear-gradient(
+						90deg,
+						var(--primary-color1) 0%,
+						var(--primary-color2) 40%,
+						rgba(0, 0, 0, 0.28) 60%
+					);
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					transition: all 1s ease;
+					background-position: 0px;
+					background-size: 200px;
+					color: var(--primary-font-color);
+				}
+
+				.title {
+					width: 100%;
+					margin: 0;
+					text-align: center;
+					margin-top: 30px;
+					color: white;
+					font-weight: 600;
+					text-transform: uppercase;
+					// letter-spacing: 4px;
+				}
+
+				.text {
+					width: 80%;
+					margin: 0 auto;
+					font-size: 13px;
+					margin-top: 20px;
+					color: white;
+					opacity: 0;
+					max-height: 0;
+					transition: all 0.3s ease;
+				}
+
+				&:hover,
+				&:focus {
+					height: 300px;
+					width: 200px;
+
+					.title {
+						margin-top: 0;
+					}
+					.text {
+						opacity: 1;
+						max-height: 100%;
+					}
+
+					.icon {
+						background-position: -120px;
+					}
+				}
+			}
+		}
+	}
+}
+
+::ng-deep {
+	.main {
+		.problem {
+			.right {
+				.carousel {
+					.slide {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content: center;
+						.title {
+						}
+
+						.description {
+							color: var(--secondary-font-color);
+						}
+					}
+				}
+			}
+		}
+	}
+}

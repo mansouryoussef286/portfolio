@@ -1,0 +1,19 @@
+<div class="carousel">
+	<div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex">
+		<!-- <img [src]="slide.ImgSrc" [alt]="slide.Title" /> -->
+		<h4 class="title">{{slide.Title}}</h4>
+		<p class="description">{{slide.Description}}</p>
+	</div>
+
+	<div class="indicators">
+		<button class="arrow" (click)="onPrevSlide()">
+			<fa-icon [icon]="Icons.faChevronLeft"></fa-icon>
+		</button>
+		<div class="dots">
+			<div class="indicator" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex" (click)="onGoToSlide(i)"></div>
+		</div>
+		<button class="arrow" (click)="onNextSlide()">
+			<fa-icon [icon]="Icons.faChevronRight"></fa-icon>
+		</button>
+	</div>
+</div>

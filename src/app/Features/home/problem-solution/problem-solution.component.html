@@ -1,0 +1,38 @@
+<div class="main">
+	<div class="p-s problem">
+		<div class="left">
+			<h1 class="main-color">Helping You Bridge the Development Gap</h1>
+			<p>
+				Do you ever feel frustrated by the gap between your brilliant ideas and the technical expertise needed to bring them to life?
+				<br />
+				I understand the challenges clients face.
+			</p>
+		</div>
+		<div class="right">
+			<!-- <li *ngFor="let problem of problems">
+				{{ problem.Title }} <br />
+				{{ problem.Description }}
+			</li> -->
+			<app-Carousel [Slides]="problems"></app-Carousel>
+		</div>
+	</div>
+
+	<div class="p-s solution">
+		<div class="left">
+			<h3 class="main-color">Let's turn your vision into reality</h3>
+			<p>
+				As a full-stack software engineer with experience in both corporate and freelance environments, <br />
+				I bridge the development gap by offering a unique combination of skills and experience:
+			</p>
+		</div>
+		<div class="right">
+			<button class="benefit" *ngFor="let solution of solutions">
+				<div class="icon">
+					<fa-icon [icon]="solution.Icon"></fa-icon>
+				</div>
+				<p class="title" [innerHTML]="solution.Title"></p>
+				<p class="text">{{ solution.Description }}</p>
+			</button>
+		</div>
+	</div>
+</div>

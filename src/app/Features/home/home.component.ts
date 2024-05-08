@@ -15,6 +15,7 @@ import { Service, Services } from './Data/Service';
 import { AnimationService } from '@App/Common/Services/Animation.Service';
 import { Project, Projects } from './Data/Projects';
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { ProblemSolutionComponent } from './problem-solution/problem-solution.component';
 
 
 @Component({
@@ -26,7 +27,8 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 		FontAwesomeModule,
 		FooterComponent,
 		RouterModule,
-		ProjectCardComponent
+		ProjectCardComponent,
+		ProblemSolutionComponent
 	],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss',
