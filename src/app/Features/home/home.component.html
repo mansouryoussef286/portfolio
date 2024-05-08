@@ -1,47 +1,6 @@
 <!-- <div class="page"> -->
 <section class="hero">
-	<div class="main">
-		<div class="left">
-			<div class="info">
-				<div class="starter">Hello, My name is</div>
-				<div class="name">Youssef Mansour</div>
-				<div class="job-title">A Full stack software engineer</div>
-				<!-- <div class="location">Based in Egypt</div> -->
-			</div>
-
-			<div class="cta">
-				<a class="btn btn-secondary" [routerLink]="['/' + RoutePaths.Home]" fragment="about" routerLink> Learn more </a>
-				<a class="btn btn-primary" [routerLink]="['/' + RoutePaths.Home]" fragment="experience" routerLink> Preview my experience </a>
-			</div>
-		</div>
-
-		<div class="right">
-			<div class="image">
-				<!-- <img src="assets/Images/portrait.jfif" alt="" /> -->
-				<img src="assets/Images/portrait-nobg.png" alt="" />
-			</div>
-		</div>
-	</div>
-
-	<div class="socials">
-		<ul>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.linkedin"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.instagram"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.facebook"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.gmail"></fa-icon></a>
-			</li>
-			<li>
-				<a href=""><fa-icon [icon]="Icons.github"></fa-icon></a>
-			</li>
-		</ul>
-	</div>
+	<app-hero></app-hero>
 </section>
 
 <!-- <div class="parallax">
@@ -123,6 +82,7 @@
 		</div>
 	</div>
 </section>
+
 <!-- <section class="resume"></section> -->
 <!-- <section class="contact"></section> -->
 <!-- <ngt-canvas [sceneGraph]="SceneGraph" /> -->

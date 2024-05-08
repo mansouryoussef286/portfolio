@@ -34,126 +34,6 @@ section {
 				var(--primary-color1) -30%,
 				transparent 300px
 			);
-
-		.main {
-			width: 100%;
-			height: calc(100vh - var(--header-height));
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: $main-gap;
-			padding-inline-start: calc($social-width + 10px);
-
-			opacity: 0;
-			transform: translateY(50px);
-			transition: $transition;
-			&.transition {
-				opacity: 1;
-				transform: translateY(0px);
-			}
-
-			.left {
-				font-size: 32px;
-				width: 100%;
-				max-width: 800px;
-
-				.info {
-					.starter {
-						font-size: 16px;
-					}
-					.name {
-						font-size: 72px;
-						color: $main-color;
-
-						opacity: 0;
-						transform: translateX(-50px);
-						transition: $transition;
-						&.transition {
-							opacity: 1;
-							transform: translateX(0px);
-						}
-					}
-					.job-title {
-						text-decoration: underline;
-					}
-					.location {
-						padding: 0;
-					}
-				}
-			}
-
-			.right {
-				// height: 100%;
-				// clip path image
-				// .image {
-				// 	width: 401px;
-				// 	overflow: hidden;
-				// 	height: 100%;
-				// 	clip-path: polygon(25% 0%, 100% 0, 75% 100%, 0% 100%);
-				// 	display: flex;
-				// 	align-items: flex-end;
-				// 	background: linear-gradient(
-				// 		180deg,
-				// 		rgba(0, 0, 0, 1) 15%,
-				// 		rgba(61, 255, 226, 1) 100%
-				// 	);
-
-				// 	img {
-				// 		object-fit: cover;
-				// 		width: 100%;
-				// 		height: 100%;
-				// 		transform: scaleX(-1);
-				// 	}
-				// }
-
-				//
-				.image {
-					width: 300px;
-					overflow: hidden;
-					height: 100%;
-					border-radius: 50%;
-
-					img {
-						object-fit: cover;
-						width: 100%;
-						transform: scaleX(-1);
-					}
-				}
-			}
-		}
-
-		.socials {
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			width: $social-width;
-
-			opacity: 0;
-			// transform: translateX(50px);
-			transition: $transition;
-			&.transition {
-				opacity: 1;
-				// transform: translateX(0px);
-			}
-
-			ul {
-				// background-color: rgba(114, 114, 114, 0.532);
-				background: linear-gradient(0deg, #c6c6c61e, transparent);
-				padding: 1rem;
-				margin: 0;
-				list-style: none;
-				padding-top: 100px;
-
-				li {
-					font-size: 32px;
-					margin: 10px 0;
-
-					a {
-						color: $main-color;
-					}
-				}
-			}
-		}
 	}
 
 	&.problem-solution {
@@ -261,7 +141,7 @@ section {
 							}
 							img {
 								object-fit: contain;
-								height: 100px;
+								height: 90px;
 								border-radius: 10px;
 							}
 						}
