@@ -37,12 +37,12 @@ export const Techs: Tech[] = [
     },
     {
         Title: '',
-        ImgSrc: 'assets/Images/Techs/.net.png',
+        ImgSrc: 'assets/Images/Techs/dotnet.png',
         ImgAlt: '.net framework',
     },
     {
         Title: '',
-        ImgSrc: 'assets/Images/Techs/.netcore.png',
+        ImgSrc: 'assets/Images/Techs/dotnetcore.png',
         ImgAlt: '.net core framework',
     },
     {

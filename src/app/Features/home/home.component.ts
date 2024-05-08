@@ -10,12 +10,11 @@ import { RouterModule } from '@angular/router';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faChevronDown, faMapPin } from '@fortawesome/free-solid-svg-icons';
 import { Experience, Experiences } from './Data/Experience';
-import { Tech, Techs } from './Data/Tech';
-import { Service, Services } from './Data/Service';
 import { AnimationService } from '@App/Common/Services/Animation.Service';
 import { Project, Projects } from './Data/Projects';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProblemSolutionComponent } from './problem-solution/problem-solution.component';
+import { AboutComponent } from './about/about.component';
 
 
 @Component({
@@ -28,7 +27,8 @@ import { ProblemSolutionComponent } from './problem-solution/problem-solution.co
 		FooterComponent,
 		RouterModule,
 		ProjectCardComponent,
-		ProblemSolutionComponent
+		ProblemSolutionComponent,
+		AboutComponent
 	],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss',
@@ -48,9 +48,7 @@ export class HomeComponent implements AfterViewInit {
 		pin: faMapPin,
 	};
 
-	services: Service[] = Services;
 	experiences: Experience[] = Experiences;
-	techs: Tech[] = Techs;
 	projects: Project[] = Projects;
 
 	constructor(private AnimationService: AnimationService) { }

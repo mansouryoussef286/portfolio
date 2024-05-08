@@ -1,0 +1,178 @@
+$main-gap: 100px;
+$mobile-gap: 50px;
+
+.main {
+	// width: 50%;
+	// margin: auto;
+	// z-index: 2;
+	// position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.title {
+		color: var(--primary-color1);
+	}
+
+	.objective {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		gap: $main-gap;
+
+		.right,
+		.left {
+			width: 50%;
+		}
+
+		.right {
+			.education {
+				.degree-item {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					margin-bottom: 20px;
+
+					.degree-info {
+						display: flex;
+						gap: 20px;
+
+						img {
+							width: 50px;
+							object-fit: contain;
+						}
+
+						.degree-institution {
+							color: var(--secondary-font-color);
+						}
+
+						.degree-desc {
+							font-size: small;
+						}
+					}
+					.from-to {
+						min-width: 100px;
+						text-align: end;
+					}
+				}
+			}
+
+			.numbers {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 20px;
+
+				.number-item {
+					display: flex;
+					align-items: center;
+					font-size: 26px;
+
+					.number {
+						font-size: 52px;
+						color: var(--primary-color1);
+						margin-inline-end: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.services {
+		display: flex;
+		justify-content: space-around;
+		align-items: stretch;
+		gap: 10px;
+
+		.service {
+			font-size: 16px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding: 10px;
+			max-width: 270px;
+
+			// glassmorphism
+			background: rgba(0, 0, 0, 0.2);
+			border-radius: 16px;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
+
+			.title {
+				color: var(--primary-color1);
+				font-weight: bold;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0 0 0 15px;
+
+				li::marker {
+					color: var(--primary-color1);
+				}
+			}
+		}
+	}
+
+	.techs {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		// flex-direction: column;
+		// align-items: stretch;
+		// text-align: center;
+
+		.tech {
+			transition: all 0.3s ease;
+			border: none;
+			background-color: transparent;
+			padding: 0;
+			img {
+				$partner-logo: 75px;
+				$small-partner-logo: 75px;
+
+				max-width: $partner-logo;
+				min-width: $partner-logo;
+				max-height: $partner-logo;
+				min-height: $partner-logo;
+				padding: 10px;
+				width: 100%;
+				object-fit: contain;
+				cursor: pointer;
+
+				// filter: grayscale(100%);
+				// &:hover {
+				// 	filter: grayscale(0%);
+				// }
+			}
+
+			&:hover,
+			&:focus {
+				scale: 1.4;
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+		.objective {
+			flex-direction: column;
+			gap: $mobile-gap;
+			.right,
+			.left {
+				width: 100%;
+			}
+		}
+
+		.services {
+			flex-wrap: wrap;
+			width: 100%;
+
+			.service {
+				max-width: 200px;
+			}
+		}
+	}
+}

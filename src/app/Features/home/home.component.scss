@@ -157,11 +157,12 @@ section {
 	}
 
 	&.problem-solution {
+		height: auto;
 	}
 
 	&.about {
 		// background-color: transparent;
-		padding-top: 100px;
+		margin-top: 100px;
 		background-image: radial-gradient(
 				ellipse at 30% 29%,
 				var(--primary-color2) 0,
@@ -177,108 +178,9 @@ section {
 				var(--primary-color1) -20%,
 				transparent 25%
 			);
-
-		.main {
-			// width: 50%;
-			// margin: auto;
-			// z-index: 2;
-			// position: relative;
-
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-
-			.objective {
-				max-width: 600px;
-				margin: auto;
-			}
-
-			.services {
-				display: flex;
-				justify-content: space-around;
-				align-items: stretch;
-				gap: 10px;
-
-				.service {
-					font-size: 16px;
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-start;
-					align-items: flex-start;
-					padding: 10px;
-					max-width: 270px;
-
-					// glassmorphism
-					background: rgba(0, 0, 0, 0.2);
-					border-radius: 16px;
-					box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-					backdrop-filter: blur(5px);
-					-webkit-backdrop-filter: blur(5px);
-
-					.title {
-						color: var(--primary-color1);
-						font-weight: bold;
-					}
-
-					ul {
-						margin: 0;
-						padding: 0 0 0 15px;
-
-						li::marker {
-							color: var(--primary-color1);
-						}
-					}
-				}
-			}
-
-			.techs {
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-				justify-content: center;
-				// flex-direction: column;
-				// align-items: stretch;
-				// text-align: center;
-
-				.tech {
-					img {
-						// mix-blend-mode: multiply;
-						// border-radius: 50%;
-
-						$partner-logo: 150px;
-						$small-partner-logo: 75px;
-
-						max-width: $partner-logo;
-						min-width: $partner-logo;
-						max-height: $partner-logo;
-						min-height: $partner-logo;
-						padding: 10px;
-						display: block; /* Ensure the image takes up its full container */
-						width: 100%; /* Adjust the width as needed */
-						height: auto; /* Maintain aspect ratio */
-						object-fit: contain;
-
-						// filter: grayscale(100%); /* Convert image to black and white */
-						transition: filter 0.3s ease;
-						cursor: pointer;
-						&:hover {
-							filter: grayscale(0%);
-						}
-					}
-				}
-			}
-		}
 	}
 
 	&.experience {
-		// height: 800px;
-
-		// background-image: url('https://static.crozdesk.com/web_app_library/providers/logos/000/013/313/original/ultatel-1669216173-logo.png?1669216173');
-		// background-attachment: fixed;
-		// background-position: center;
-		// background-repeat: no-repeat;
-		// background-size: cover;
-
 		.main {
 			// width: 80%;
 			// margin: auto;

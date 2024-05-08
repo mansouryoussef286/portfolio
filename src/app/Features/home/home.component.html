@@ -54,44 +54,7 @@
 </section>
 
 <section class="about" id="about">
-	<!-- <div class="bg-title l">
-		<h1>about</h1>
-	</div> -->
-
-	<div class="main">
-		<h1 class="section-title">About me</h1>
-		Education
-		<div class="objective mb-5">
-			<p>
-				As a full-stack developer with proficiency in Angular and TypeScript, Nodejs backend frameworks as NestJS and .NET framework. I am seeking a
-				challenging role that will allow me to utilize my skills to develop and maintain complex systems.
-			</p>
-			<p>
-				With experience in both front-end and back-end development, as well as a background in civil site engineering, I bring a unique perspective and
-				problem-solving skills that enable me to contribute to the success of any project.
-			</p>
-			<p>I am committed to continuous learning and professional development to stay up-to-date with the latest technologies and industry trends.</p>
-		</div>
-
-		<h3>Providing</h3>
-		<div class="services mb-5">
-			<div *ngFor="let service of services" class="service">
-				<div class="title">{{ service.Title }}</div>
-				<ul>
-					<li *ngFor="let subService of service.SubServices">
-						{{ subService }}
-					</li>
-				</ul>
-			</div>
-		</div>
-
-		<h3>Using</h3>
-		<div class="techs mb-5">
-			<span *ngFor="let tech of techs" class="tech">
-				<img [src]="tech.ImgSrc" [alt]="tech.ImgAlt" class="img" />
-			</span>
-		</div>
-	</div>
+	<app-about></app-about>
 </section>
 
 <section class="experience" id="experience">
@@ -102,7 +65,7 @@
 	<div class="main">
 		<h1 class="section-title">Professional experience</h1>
 		Projects layout
-		<div class="projects-card">
+		<div class="projects-card mb-5">
 			<app-project-card *ngFor="let project of projects" [Project]="project"></app-project-card>
 		</div>
 
