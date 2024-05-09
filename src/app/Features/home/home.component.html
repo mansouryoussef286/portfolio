@@ -17,70 +17,7 @@
 </section>
 
 <section class="experience" id="experience">
-	<!-- <div class="bg-title r">
-		<h1>experience</h1>
-	</div> -->
-
-	<div class="main">
-		<h1 class="section-title">Professional experience</h1>
-		Projects layout
-		<div class="projects-card mb-5">
-			<app-project-card *ngFor="let project of projects" [Project]="project"></app-project-card>
-		</div>
-
-		<div class="accordion accordion-flush">
-			<div class="accordion-item" *ngFor="let experience of experiences; index as i">
-				<h2 class="accordion-header">
-					<button
-						class="accordion-button collapsed"
-						type="button"
-						data-bs-toggle="collapse"
-						[attr.data-bs-target]="'#experience-' + i"
-						aria-expanded="false">
-						<fa-icon [icon]="Icons.chevron" class="accordion-icon"></fa-icon>
-
-						<div class="info">
-							<div class="country">
-								<fa-icon [icon]="Icons.pin"></fa-icon>
-								{{ experience.Country }}
-								<span class="from-to">{{ experience.From }} - {{ experience.To }}</span>
-							</div>
-							<h3>
-								{{ experience.Company }}
-							</h3>
-							<div class="role">
-								{{ experience.Role }}
-							</div>
-							<div>
-								{{ experience.Description }}
-							</div>
-						</div>
-						<img [src]="experience.Logo" alt="" />
-					</button>
-				</h2>
-				<div [id]="'experience-' + i" class="accordion-collapse collapse">
-					<div class="accordion-body">
-						<h3>Duties:</h3>
-						<ul *ngFor="let duty of experience.Duties">
-							<li>{{ duty }}</li>
-						</ul>
-
-						<h3>Projects:</h3>
-						<ul *ngFor="let project of experience.Projects">
-							<li>
-								{{ project.Title }}
-								<br />
-								{{ project.Description }}
-								<ul *ngFor="let duty of project.Duties">
-									<li>{{ duty }}</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<app-projects></app-projects>
 </section>
 
 <!-- <section class="resume"></section> -->
