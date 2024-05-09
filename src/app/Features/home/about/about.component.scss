@@ -2,7 +2,8 @@ $main-gap: 100px;
 $mobile-gap: 50px;
 
 .main {
-	// width: 50%;
+	width: 100%;
+
 	// margin: auto;
 	// z-index: 2;
 	// position: relative;
@@ -20,7 +21,7 @@ $mobile-gap: 50px;
 		justify-content: center;
 		align-items: flex-end;
 		gap: $main-gap;
-
+		width: 100%;
 		.right,
 		.left {
 			width: 50%;
@@ -164,6 +165,12 @@ $mobile-gap: 50px;
 			.left {
 				width: 100%;
 			}
+
+			.right {
+				.numbers {
+					flex-direction: column;
+				}
+			}
 		}
 
 		.services {
@@ -171,7 +178,7 @@ $mobile-gap: 50px;
 			width: 100%;
 
 			.service {
-				max-width: 200px;
+				max-width: 140px;
 			}
 		}
 	}
