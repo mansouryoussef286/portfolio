@@ -1,35 +1,32 @@
-<div class="pcard" [ngStyle]="{ 'background-image': 'url(' + project.ImgSrc + ')' }">
-	<!-- <div class="project-img">
-		<img class="project-img" [src]="project.ImgSrc" [alt]="project.ImgAlt" />
-	</div> -->
-
-	<div class="pcard-body">
-		<div class="card-title">
-			{{ project.Title }}
-		</div>
-		<div class="description">
-			<span>
+<button class="pcard">
+	<!-- [ngStyle]="{ 'background-image': 'url(' + project.ImgSrc + ')' }" -->
+	<img class="project-img" [src]="project.ImgSrc" [alt]="project.ImgAlt" />
+	<div class="dummy">
+		<div class="pcard-body">
+			<h5 class="card-title">
+				{{ project.Title }}
+			</h5>
+			<div class="description">
 				{{ project.Description }}
-			</span>
-			<a class="show-more pointer" (click)="showMore()">show details</a>
-		</div>
-
-		<div class="links">
-			<span class="visit">
-				<a [href]="project.VisitLink" target="_blank">
-					<fa-icon [icon]="Icons.externalLink"></fa-icon>
-					Visit Project
-				</a>
-			</span>
-			<div class="d-flex align-items-center">
-				<a [href]="project.GithubLink" target="_blank" class="github-icon">
-					<fa-icon [icon]="Icons.github"></fa-icon>
-				</a>
-				<img class="logo" [src]="project.LogoSrc" [alt]="project.LogoAlt" />
+				<!-- <a class="show-more pointer" (click)="showMore()">show details</a> -->
+			</div>
+			<div class="links">
+				<span class="visit">
+					<a [href]="project.VisitLink" target="_blank" *ngIf="project.VisitLink">
+						<fa-icon [icon]="Icons.externalLink"></fa-icon>
+						Visit Project
+					</a>
+				</span>
+				<div class="d-flex align-items-center">
+					<a [href]="project.GithubLink" target="_blank" class="github-icon" *ngIf="project.GithubLink">
+						<fa-icon [icon]="Icons.github"></fa-icon>
+					</a>
+					<img class="logo" [src]="project.LogoSrc" [alt]="project.LogoAlt" *ngIf="project.LogoSrc" />
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</button>
 
 <!-- <div class="card-3d-wrap" [ngClass]="{ rotate: rotate }">
 	<div class="card-3d-wrapper">

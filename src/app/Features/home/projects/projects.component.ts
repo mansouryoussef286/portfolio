@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ProjectCardComponent } from '../project-card/project-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 import { faChevronDown, faMapPin } from '@fortawesome/free-solid-svg-icons';
 import { Experience, Experiences } from '../Data/Experience';
 import { Project, Projects } from '../Data/Projects';

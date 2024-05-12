@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { RouterModule } from '@angular/router';
 import { AnimationService } from '@App/Common/Services/Animation.Service';
-import { ProjectCardComponent } from './project-card/project-card.component';
+import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { ProblemSolutionComponent } from './problem-solution/problem-solution.component';
 import { AboutComponent } from './about/about.component';
 import { HeroComponent } from './hero/hero.component';
