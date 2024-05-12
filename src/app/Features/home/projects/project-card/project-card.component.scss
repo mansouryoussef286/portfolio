@@ -1,0 +1,295 @@
+$card-width: 450px;
+$card-height: 250px;
+
+$card-small-width: 400px;
+$card-small-height: 250px;
+$transition: all 0.2s ease-in-out;
+
+.pcard {
+	width: $card-width;
+	height: $card-height;
+	position: relative;
+	// background-position: left;
+	// background-size: cover;
+
+	overflow: hidden;
+	border: none;
+	border-radius: 10px;
+	padding: 0;
+
+	.project-img {
+		transition: $transition;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+
+		object-fit: cover;
+		object-position: left;
+	}
+
+	.dummy {
+		// to allow for max-height animation
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		bottom: 0;
+
+		.pcard-body {
+			// background-color: var(--primary-color1);
+			background-color: #383838;
+			max-height: 55px;
+			padding: 10px;
+
+			transition: $transition;
+			overflow: hidden;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-start;
+
+			border-radius: 10px 10px 0 0;
+
+			color: var(--primary-font-color);
+
+			.card-title,
+			.description {
+				transition: $transition;
+				opacity: 0;
+				text-align: start;
+			}
+
+			.description {
+				font-size: 14px;
+				padding-bottom: 10px;
+			}
+
+			.links {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				a {
+					color: var(--primary-font-color);
+					text-decoration: none;
+				}
+
+				.visit {
+					flex-grow: 1;
+					display: flex;
+					justify-content: space-between;
+					align-items: baseline;
+					margin-inline-end: 10px;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				.github-icon {
+					font-size: 24px;
+				}
+
+				.logo {
+					height: 30px;
+					width: 30px;
+					background: var(--primary-bg-color);
+					width: auto;
+					margin-inline-start: 5px;
+					object-fit: contain;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+
+	&:hover,
+	&:focus {
+		// filter: grayscale(1);
+
+		.project-img {
+			scale: 1.05;
+			filter: grayscale(1);
+		}
+		.dummy {
+			.pcard-body {
+				// filter: grayscale(0);
+				// height: 80%;
+				max-height: 80%;
+				background-color: var(--primary-color1);
+
+				.card-title,
+				.description {
+					// max-height: 200px;
+					opacity: 1;
+				}
+
+				.links {
+					.visit {
+						.visit-title {
+							display: none;
+						}
+
+						a {
+							font-size: smaller;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.pcard {
+		width: $card-small-width;
+		height: $card-small-height;
+	}
+}
+
+// $card-width: 300px;
+// $card-height: 400px;
+
+// .pointer {
+// 	cursor: pointer;
+// }
+// .card-3d-wrap {
+// 	position: relative;
+// width: $card-width;
+// height: $card-height;
+
+// 	-webkit-transform-style: preserve-3d;
+// 	transform-style: preserve-3d;
+// 	perspective: 1000px;
+// }
+// .card-3d-wrapper {
+// 	width: 100%;
+// 	height: 100%;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	-webkit-transform-style: preserve-3d;
+// 	transform-style: preserve-3d;
+// 	transition: transform 700ms 400ms ease-out;
+// }
+// // .card-3d-wrap:hover {
+// // 	.card-3d-wrapper {
+// // 		transform: rotateY(180deg);
+// // 		transition: transform 700ms 400ms ease-out;
+// // 	}
+// // }
+
+// .card-3d-wrap.rotate {
+// 	.card-3d-wrapper {
+// 		transform: rotateY(180deg);
+// 		transition: transform 700ms 400ms ease-out;
+// 	}
+// }
+
+// .project-card {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	perspective: 1000px;
+
+// 	width: $card-width;
+// 	height: $card-height;
+// 	border-radius: 10px;
+// 	background-color: var(--secondary-bg-color);
+// 	color: var(--invert-primary-font-color);
+// 	overflow: hidden;
+// 	display: flex;
+// 	flex-direction: column;
+
+// 	.card-title {
+// 		background: rgb(2, 0, 36);
+// 		background: linear-gradient(
+// 			90deg,
+// 			rgba(61, 255, 226, 1) 0%,
+// 			rgba(2, 0, 36, 1) 100%
+// 		);
+// 		font-size: 20px;
+// 		padding: 5px 10px;
+// 	}
+
+// 	.card-body {
+// 		transform: translateZ(200px) scale(0.8);
+// 		transform-style: preserve-3d;
+
+// 		padding: 10px;
+// 		flex-grow: 1;
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: flex-start;
+// 		align-items: center;
+// 		overflow: hidden;
+
+// 		.project-img {
+// 			object-fit: contain;
+// 			width: 100%;
+// 		}
+
+// 		.description {
+// 			height: 100%;
+// 			overflow: auto;
+
+// 			span {
+// 				// display: -webkit-box;
+// 				// -webkit-line-clamp: 3;
+// 				// -webkit-box-orient: vertical;
+// 				// overflow: hidden;
+// 			}
+
+// 			.show-more {
+// 				font-size: smaller;
+// 				color: var(--invert-secondary-font-color);
+// 			}
+// 		}
+
+// 		a {
+// 			color: inherit;
+// 			text-decoration: none;
+// 		}
+
+// .links {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+
+// 	.visit {
+// 		justify-self: flex-start;
+
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+
+// 	.github-icon {
+// 		font-size: 24px;
+// 	}
+
+// 	.logo {
+// 		height: 30px;
+// 		width: 30px;
+// 		background: var(--primary-bg-color);
+// 		width: auto;
+// 		margin-inline-start: 5px;
+// 		object-fit: contain;
+// 		border-radius: 5px;
+// 	}
+// }
+// 	}
+// }
+
+// .project-card.back {
+// 	backface-visibility: hidden;
+// 	transform: rotateY(180deg);
+// }

@@ -51,11 +51,12 @@ $main-gap: 100px;
 			justify-content: center;
 			align-items: flex-start;
 			flex-wrap: wrap;
-			gap: 10px;
+			gap: 100px;
 			// height: 350px;
 			@media (max-width: 576px) {
 				flex-direction: column;
 				align-items: center;
+				gap: 10px;
 			}
 			.benefit {
 				width: 100%;

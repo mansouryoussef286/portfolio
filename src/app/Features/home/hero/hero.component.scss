@@ -162,4 +162,15 @@ $main-gap: 100px;
 			}
 		}
 	}
+
+	.socials {
+		left: 0;
+		bottom: 100px;
+		width: 100%;
+
+		ul {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
 }
