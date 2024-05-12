@@ -1,5 +1,8 @@
 $card-width: 450px;
 $card-height: 250px;
+
+$card-small-width: 400px;
+$card-small-height: 250px;
 $transition: all 0.2s ease-in-out;
 
 .pcard {
@@ -21,6 +24,9 @@ $transition: all 0.2s ease-in-out;
 		height: 100%;
 		left: 0;
 		top: 0;
+
+		object-fit: cover;
+		object-position: left;
 	}
 
 	.dummy {
@@ -76,7 +82,12 @@ $transition: all 0.2s ease-in-out;
 				}
 
 				.visit {
-					justify-self: flex-start;
+					flex-grow: 1;
+					display: flex;
+					justify-content: space-between;
+					align-items: baseline;
+					margin-inline-end: 10px;
+
 					&:hover {
 						text-decoration: underline;
 					}
@@ -119,8 +130,27 @@ $transition: all 0.2s ease-in-out;
 					// max-height: 200px;
 					opacity: 1;
 				}
+
+				.links {
+					.visit {
+						.visit-title {
+							display: none;
+						}
+
+						a {
+							font-size: smaller;
+						}
+					}
+				}
 			}
 		}
+	}
+}
+
+@media (max-width: 576px) {
+	.pcard {
+		width: $card-small-width;
+		height: $card-small-height;
 	}
 }
 

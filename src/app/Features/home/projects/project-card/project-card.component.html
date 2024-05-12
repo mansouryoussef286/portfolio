@@ -12,6 +12,9 @@
 			</div>
 			<div class="links">
 				<span class="visit">
+					<span class="visit-title">
+						{{ project.Title }}
+					</span>
 					<a [href]="project.VisitLink" target="_blank" *ngIf="project.VisitLink">
 						<fa-icon [icon]="Icons.externalLink"></fa-icon>
 						Visit Project
