@@ -2,14 +2,35 @@
 	<div class="left">
 		<div class="info">
 			<!-- <div class="starter">Hello, My name is</div> -->
-			<div class="job-title">Full stack software engineer</div>
 			<div class="name">Youssef Mansour</div>
+			<div class="job-title">Full stack software engineer</div>
+			<p>I'm ready to be the technical partner for your upcoming project.</p>
 			<!-- <div class="location">Based in Egypt</div> -->
 		</div>
 
 		<div class="cta">
+			<a class="btn btn-primary me-3" [routerLink]="['/' + RoutePaths.Home]" fragment="experience" routerLink> Preview my experience </a>
 			<a class="btn btn-secondary" [routerLink]="['/' + RoutePaths.Home]" fragment="about" routerLink> Learn more </a>
-			<a class="btn btn-primary" [routerLink]="['/' + RoutePaths.Home]" fragment="experience" routerLink> Preview my experience </a>
+		</div>
+
+		<div class="socials">
+			<ul>
+				<li>
+					<a href=""><fa-icon [icon]="Icons.linkedin"></fa-icon></a>
+				</li>
+				<li>
+					<a href=""><fa-icon [icon]="Icons.instagram"></fa-icon></a>
+				</li>
+				<li>
+					<a href=""><fa-icon [icon]="Icons.facebook"></fa-icon></a>
+				</li>
+				<li>
+					<a href=""><fa-icon [icon]="Icons.gmail"></fa-icon></a>
+				</li>
+				<li>
+					<a href=""><fa-icon [icon]="Icons.github"></fa-icon></a>
+				</li>
+			</ul>
 		</div>
 	</div>
 
@@ -19,24 +40,4 @@
 			<img src="assets/Images/portrait-nobg.png" alt="" />
 		</div>
 	</div>
-</div>
-
-<div class="socials">
-	<ul>
-		<li>
-			<a href=""><fa-icon [icon]="Icons.linkedin"></fa-icon></a>
-		</li>
-		<li>
-			<a href=""><fa-icon [icon]="Icons.instagram"></fa-icon></a>
-		</li>
-		<li>
-			<a href=""><fa-icon [icon]="Icons.facebook"></fa-icon></a>
-		</li>
-		<li>
-			<a href=""><fa-icon [icon]="Icons.gmail"></fa-icon></a>
-		</li>
-		<li>
-			<a href=""><fa-icon [icon]="Icons.github"></fa-icon></a>
-		</li>
-	</ul>
 </div>

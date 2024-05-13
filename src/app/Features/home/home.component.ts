@@ -33,15 +33,8 @@ import { ProjectsComponent } from './projects/projects.component';
 	styleUrl: './home.component.scss',
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
 	readonly SceneGraph = SceneComponent;
 	RoutePaths = RoutePaths;
 
-	constructor(private AnimationService: AnimationService) { }
-
-	ngAfterViewInit() {
-		this.AnimationService.Home.LandingText();
-		this.AnimationService.Home.MyName();
-		this.AnimationService.Home.Socials();
-	}
 }
