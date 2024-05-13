@@ -3,7 +3,7 @@ $box-shadow: 0px 0px 15px 1000px rgb(4, 0, 9, 0.8);
 // $bg-color-before-scroll: var(--primary-color1);
 $bg-color-before-scroll: transparent;
 $font-color: var(--primary-font-color);
-$font-color-secondary: var(--primary-font-color);
+$font-color-secondary: var(--secondary-font-color);
 
 .navbar {
 	// background-color: transparent !important;
@@ -14,7 +14,6 @@ $font-color-secondary: var(--primary-font-color);
 		transition: all 0.3s ease;
 		opacity: 0;
 		padding: 0 5px;
-
 		text-decoration: none;
 
 		.logo-img {
@@ -80,23 +79,27 @@ $font-color-secondary: var(--primary-font-color);
 
 	.navbar-brand {
 		opacity: 1;
+		color: $font-color !important;
 	}
 
 	i {
 		color: $font-color;
 	}
-	a {
-		color: $font-color-secondary !important;
+	.nav-item {
+		a {
+			color: $font-color-secondary !important;
 
-		margin: 0 5px;
-		padding-right: 5px;
-		padding-left: 5px;
-		border-radius: 5px;
-		&:hover.nav-link,
-		&.active.nav-link {
-			color: $font-color !important;
+			margin: 0 5px;
+			padding-right: 5px;
+			padding-left: 5px;
+			border-radius: 5px;
+			&:hover.nav-link,
+			&.active.nav-link {
+				color: $font-color !important;
+			}
 		}
 	}
+
 	.container-fluid:has(.show),
 	.container-fluid:has(.collapsing) {
 		background-color: inherit;

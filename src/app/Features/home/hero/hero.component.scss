@@ -34,8 +34,8 @@ $main-gap: 100px;
 				font-size: 72px;
 				color: $main-color;
 
-				opacity: 0;
-				transform: translateX(-50px);
+				// opacity: 0;
+				// transform: translateX(-50px);
 				transition: $transition;
 				&.transition {
 					opacity: 1;
@@ -43,10 +43,35 @@ $main-gap: 100px;
 				}
 			}
 			.job-title {
-				text-decoration: underline;
+				// text-decoration: underline;
 			}
-			.location {
+			// .location {
+			// 	padding: 0;
+			// }
+			p {
+				font-size: 16px;
+			}
+		}
+
+		.cta {
+		}
+
+		.socials {
+			margin-top: 20px;
+			ul {
+				display: flex;
+				margin: 0;
 				padding: 0;
+				list-style: none;
+
+				li {
+					font-size: 26px;
+					padding: 0 15px;
+
+					a {
+						color: $main-color;
+					}
+				}
 			}
 		}
 	}
@@ -91,37 +116,37 @@ $main-gap: 100px;
 	}
 }
 
-.socials {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: $social-width;
+// .socials {
+// 	position: absolute;
+// 	right: 0;
+// 	bottom: 0;
+// 	width: $social-width;
 
-	opacity: 0;
-	// transform: translateX(50px);
-	transition: $transition;
-	&.transition {
-		opacity: 1;
-		// transform: translateX(0px);
-	}
+// 	opacity: 0;
+// 	// transform: translateX(50px);
+// 	transition: $transition;
+// 	&.transition {
+// 		opacity: 1;
+// 		// transform: translateX(0px);
+// 	}
 
-	ul {
-		// background: linear-gradient(0deg, #c6c6c61e, transparent);
-		padding: 1rem;
-		margin: 0;
-		list-style: none;
-		padding-top: 100px;
+// 	ul {
+// 		// background: linear-gradient(0deg, #c6c6c61e, transparent);
+// 		padding: 1rem;
+// 		margin: 0;
+// 		list-style: none;
+// 		padding-top: 100px;
 
-		li {
-			font-size: 32px;
-			margin: 10px 0;
+// 		li {
+// 			font-size: 32px;
+// 			margin: 10px 0;
 
-			a {
-				color: $main-color;
-			}
-		}
-	}
-}
+// 			a {
+// 				color: $main-color;
+// 			}
+// 		}
+// 	}
+// }
 
 @media (max-width: 576px) {
 	.main {
@@ -151,7 +176,13 @@ $main-gap: 100px;
 					font-size: 40px;
 				}
 				.job-title {
-					font-size: 30px;
+					font-size: 26px;
+				}
+			}
+
+			.socials {
+				ul {
+					justify-content: center;
 				}
 			}
 		}
@@ -163,14 +194,14 @@ $main-gap: 100px;
 		}
 	}
 
-	.socials {
-		left: 0;
-		bottom: 100px;
-		width: 100%;
+	// .socials {
+	// 	left: 0;
+	// 	bottom: 100px;
+	// 	width: 100%;
 
-		ul {
-			display: flex;
-			justify-content: space-around;
-		}
-	}
+	// 	ul {
+	// 		display: flex;
+	// 		justify-content: space-around;
+	// 	}
+	// }
 }

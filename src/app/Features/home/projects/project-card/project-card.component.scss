@@ -1,8 +1,7 @@
 $card-width: 450px;
 $card-height: 250px;
 
-$card-small-width: 400px;
-$card-small-height: 250px;
+$card-small-width: 80vw;
 $transition: all 0.2s ease-in-out;
 
 .pcard {
@@ -91,6 +90,10 @@ $transition: all 0.2s ease-in-out;
 					&:hover {
 						text-decoration: underline;
 					}
+
+					a {
+						font-size: smaller;
+					}
 				}
 
 				.github-icon {
@@ -136,10 +139,6 @@ $transition: all 0.2s ease-in-out;
 						.visit-title {
 							display: none;
 						}
-
-						a {
-							font-size: smaller;
-						}
 					}
 				}
 			}
@@ -150,7 +149,6 @@ $transition: all 0.2s ease-in-out;
 @media (max-width: 576px) {
 	.pcard {
 		width: $card-small-width;
-		height: $card-small-height;
 	}
 }
 

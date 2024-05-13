@@ -1,6 +1,7 @@
+import { AnimationService } from '@App/Common/Services/Animation.Service';
 import { RoutePaths } from '@App/Common/Settings/RoutePaths';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -16,7 +17,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
   ], templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
-export class HeroComponent {
+export class HeroComponent implements AfterViewInit {
   RoutePaths = RoutePaths;
 
   Icons = {
@@ -26,4 +27,13 @@ export class HeroComponent {
     gmail: faEnvelope,
     github: faGithub,
   };
+
+
+  constructor(private AnimationService: AnimationService) { }
+
+  ngAfterViewInit() {
+    this.AnimationService.Home.LandingText();
+    // this.AnimationService.Home.MyName();
+    this.AnimationService.Home.Socials();
+  }
 }

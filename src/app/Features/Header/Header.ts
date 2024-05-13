@@ -4,16 +4,10 @@ import { Component, ElementRef, HostListener, OnChanges, OnInit, SimpleChanges, 
 import { BrowserModule } from '@angular/platform-browser';
 import { Router, RouterModule } from '@angular/router';
 
-export class Link {
-	Title!: string;
-	Link!: string;
-}
-
-export class ArtCategory {
-	Title!: string;
-	// ImgSrc!: string;
-	ImgAlt!: string;
-	Links!: Link[];
+export class NavItem {
+	Text!: string;
+	SectionName!: string;
+	RouterLink!: string[];
 }
 @Component({
 	selector: 'app-header',
@@ -26,18 +20,46 @@ export class HeaderComponent implements OnInit {
 	wasSmallScreen: boolean = window.innerWidth <= 576;
 	@ViewChild('NavbarCollapse') NavbarCollapse!: ElementRef;
 	@ViewChild('navbar') navbar: any;
-	RoutePaths = RoutePaths;
+	sectionName!: string;
 
-
+	navItems: NavItem[] = [
+		{
+			Text: 'About',
+			SectionName: 'about',
+			RouterLink: [RoutePaths.Home],
+		},
+		{
+			Text: 'Experience',
+			SectionName: 'experience',
+			RouterLink: [RoutePaths.Home]
+		},
+		{
+			Text: 'Contact',
+			SectionName: 'contact',
+			RouterLink: [RoutePaths.Home]
+		}
+	]
 	constructor(private Router: Router) { }
 
 	ngOnInit(): void {
-		this.ScrollChanges()
-	}
-	goToProfile() {
-	}
+		this.ScrollChanges();
 
-	goToSettings() {
+	}
+	ngAfterViewInit() {
+		const sections = document.querySelectorAll('.section')!;
+		const sectionsObserver = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					// console.log(entry.target.classList[1]);
+					this.sectionName = entry.target.classList[1];
+					return;
+				}
+			});
+		});
+
+		sections.forEach(element => {
+			sectionsObserver.observe(element);
+		});
 	}
 
 	ScrollChanges() {
